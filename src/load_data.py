@@ -43,7 +43,7 @@ def load_data_to_db(csv_file):
 
 if __name__ == "__main__":
     # Path to transformed CSV file
-    csv_file_path = "data/transformed_users.csv"
+    csv_file_path = "../data/transformed_users.csv"
 
     # Verify CSV file exists
     if not os.path.exists(csv_file_path):
