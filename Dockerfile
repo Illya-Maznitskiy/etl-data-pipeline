@@ -1,5 +1,8 @@
 FROM python:3.11-slim
 
+# Install PostgreSQL client tools
+RUN apt-get update && apt-get install -y postgresql-client
+
 # Set working directory
 WORKDIR /app
 

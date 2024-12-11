@@ -27,7 +27,7 @@ services:
     volumes:
       - .:/app:cached
     working_dir: /app
-    command: bash -c "python src/generate_csv.py && python src/transform_data.py && python src/load_data.py"
+    command: bash -c "while ! pg_isready -h db -p 5432; do sleep 1; done; python src/generate_csv.py && python src/transform_data.py && python src/load_data.py"
 
 volumes:
   postgres_data:
