@@ -6,9 +6,10 @@ ETL Data Pipeline: A Python-based ETL pipeline to extract data from a CSV, trans
 
 
 ## Technologies used:
-In this project our team used the following technologies:
+In this project, I used the following technologies:
 
 - Python
+- SQL
 - PostgreSQL
 - Docker
 
@@ -33,7 +34,7 @@ In this project our team used the following technologies:
 ---
 
 
-## Installation
+## Installation and Commands
 1. Clone the repository:
     ```bash
     git clone https://github.com/Illya-Maznitskiy/etl-data-pipeline.git
@@ -42,11 +43,26 @@ In this project our team used the following technologies:
     ```bash
     cd etl-data-pipeline
     ```
-3. Build and run Docker containers:
+3. Build and run Docker containers (it will automatically create PostgreSQL database and load data there):
     ```bash
     docker-compose up --build
     ```
-4. Run the ETL process:
+4. Run the SQL queries (you can choose different SQL queries, like query2.sql or query3.sql in the command):
     ```bash
-    docker exec etl-container python etl.py
+    docker exec -it etl_postgres_db psql -U myuser -d mydb -f /queries/query1.sql
     ```
+5. Check the db data:
+    ```bash
+   docker exec -it etl_postgres_db psql -U myuser -d mydb -c "SELECT * FROM users;"
+    ```
+
+
+## Screenshots
+### Build and run Docker containers with creating data in DB
+![Docker Build and Data](screenshots/docker_build_data.png)
+
+### Check the data in DB with Docker
+![View DB Data](screenshots/view_db_data.png)
+
+### Create SQL queries
+![Create SQL Queries](screenshots/create_sql_queries.png)
