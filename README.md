@@ -57,6 +57,17 @@ In this project, I used the following technologies:
     ```
 
 
+## Accessing PostgreSQL Database
+
+You can access the PostgreSQL database using the following details from docker-compose:
+
+- **Host:** `localhost`
+- **Port:** `5432`
+- **User:** `myuser`
+- **Password:** `example`
+- **Database:** `mydb`
+
+
 ## Screenshots
 ### Build and run Docker containers with creating data in DB
 ![Docker Build and Data](screenshots/docker_build_data.png)
