@@ -21,9 +21,9 @@ def generate_signup_date():
 # Create CSV file in 'data/' folder
 def generate_csv(num_records=1000):
     # Ensure the 'data' folder exists
-    os.makedirs("data", exist_ok=True)
+    os.makedirs("../data", exist_ok=True)
 
-    csv_file_path = "data/users.csv"  # Path where CSV will be saved
+    csv_file_path = "../data/users.csv"  # Path where CSV will be saved
 
     with open(csv_file_path, mode="w", newline="") as file:
         writer = csv.writer(file)
